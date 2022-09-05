@@ -1,4 +1,4 @@
-package humans;
+package humans.models;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -13,7 +13,6 @@ public class Person {
     private double height;
     private double weight;
     private boolean habits;
-
     private String nation;
     private Address adress;
 

@@ -4,6 +4,9 @@ import java.util.List;
 
 import humans.generators.AddressGenerator;
 import humans.generators.PersonGenerator;
+import humans.models.Address;
+import humans.models.Person;
+import humans.storage.PersonStorage;
 
 public class AppHumans {
 
@@ -26,9 +29,12 @@ public class AppHumans {
                 "Swede", "Canadian", "Irishman" };
         PersonGenerator randomPerson = new PersonGenerator(names, surnames, nations, addresses);
 
-        List<Person> people = randomPerson.create(15);
-
-        for (Person person : people) {
+        int amount = 20;
+        PersonStorage.initialize(amount);
+        PersonStorage.create(randomPerson.create(amount));
+        
+        List<Person> querySet = PersonStorage.filter("age", "<", 30);
+        for (Person person: querySet) {
             System.out.println(person.toString());
         }
 

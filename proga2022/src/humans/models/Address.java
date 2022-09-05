@@ -1,13 +1,17 @@
-package humans;
+package humans.models;
+
+import java.util.UUID;
 
 public class Address {
+    private UUID id;
+    
     private String state;
     private String city;
     private String street;
     private int house;
 
     public Address(String state, String city, String street, int house) {
-        super();
+        this.id = UUID.randomUUID();
         this.state = state;
         this.city = city;
         this.street = street;
@@ -20,6 +24,10 @@ public class Address {
                 + this.house;
     }
 
+    public UUID get_id() {
+        return this.id;
+    }
+    
     public String get_country() {
         return state;
     }

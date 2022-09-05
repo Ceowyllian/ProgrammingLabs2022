@@ -3,7 +3,7 @@ package humans.generators;
 import java.util.LinkedList;
 import java.util.List;
 
-import humans.Address;
+import humans.models.Address;
 
 public class AddressGenerator extends BaseGenerator<Address> {
     private String[] states;

@@ -3,8 +3,8 @@ package humans.generators;
 import java.util.LinkedList;
 import java.util.List;
 
-import humans.Address;
-import humans.Person;
+import humans.models.Address;
+import humans.models.Person;
 
 public class PersonGenerator extends BaseGenerator<Person> {
 
@@ -24,10 +24,15 @@ public class PersonGenerator extends BaseGenerator<Person> {
 
     @Override
     public Person create() {
-        return new Person(random.choose(names), random.choose(surnames),
-                random.getInt(14, 90), random.getDouble(150., 200.),
-                random.getDouble(45., 90.), random.getBool(),
-                random.choose(nations), random.choose(addresses));
+        return new Person(
+                random.choose(names), 
+                random.choose(surnames),
+                random.getInt(14, 90), 
+                random.getDouble(150., 200.),
+                random.getDouble(45., 90.), 
+                random.getBool(),
+                random.choose(nations), 
+                random.choose(addresses));
     }
 
     @Override
