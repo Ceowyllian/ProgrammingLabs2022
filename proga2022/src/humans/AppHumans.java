@@ -33,7 +33,7 @@ public class AppHumans {
         PersonStorage.initialize(amount);
         PersonStorage.create(randomPerson.create(amount));
         
-        List<Person> querySet = PersonStorage.filter("age", "<", 30);
+        List<Person> querySet = PersonStorage.filter("age", "<", 25);
         for (Person person: querySet) {
             System.out.println(person.toString());
         }
