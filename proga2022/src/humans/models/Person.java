@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Person {
 
-    private UUID id;
+    private final UUID id;
 
     private String name;
     private String surname;
@@ -17,7 +17,7 @@ public class Person {
     private Address adress;
 
     public Person(String name, String surname, int age, double height,
-            double weight, boolean habits, String nation, Address adress) {
+                  double weight, boolean habits, String nation, Address adress) {
         super();
         this.id = UUID.randomUUID();
         this.name = name;
@@ -82,6 +82,10 @@ public class Person {
 
     public boolean hasHabits() {
         return this.habits;
+    }
+
+    public void setHabits(boolean habits) {
+        this.habits = habits;
     }
 
     public String getNation() {

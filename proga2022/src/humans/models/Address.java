@@ -3,7 +3,7 @@ package humans.models;
 import java.util.UUID;
 
 public class Address {
-    private UUID id;
+    private final UUID id;
     
     private String state;
     private String city;

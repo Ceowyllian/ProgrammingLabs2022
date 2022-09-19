@@ -8,10 +8,10 @@ import humans.models.Person;
 
 public class PersonGenerator extends BaseGenerator<Person> {
 
-    private String[] names;
-    private String[] surnames;
-    private String[] nations;
-    private List<Address> addresses;
+    private final String[] names;
+    private final String[] surnames;
+    private final String[] nations;
+    private final List<Address> addresses;
 
     public PersonGenerator(String[] names, String[] surnames, String[] nations,
             List<Address> addresses) {
@@ -37,7 +37,7 @@ public class PersonGenerator extends BaseGenerator<Person> {
 
     @Override
     public List<Person> create(int amount) {
-        LinkedList<Person> list = new LinkedList<Person>();
+        LinkedList<Person> list = new LinkedList<>();
         for (int i = 0; i < amount; i++)
             list.add(create());
         return list;

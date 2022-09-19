@@ -6,9 +6,9 @@ import java.util.List;
 import humans.models.Address;
 
 public class AddressGenerator extends BaseGenerator<Address> {
-    private String[] states;
-    private String[] cities;
-    private String[] streets;
+    private final String[] states;
+    private final String[] cities;
+    private final String[] streets;
 
     public AddressGenerator(String[] states, String[] cities,
             String[] streets) {
