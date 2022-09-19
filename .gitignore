@@ -1,3 +1,7 @@
 /out/
 /.idea/
 /ProgrammingLabs2022.iml
+/bin/
+.classpath
+.project
+.settings
