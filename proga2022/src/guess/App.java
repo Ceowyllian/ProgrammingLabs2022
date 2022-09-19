@@ -23,9 +23,9 @@ public class App {
 				console.println("\nYou guessed!");
 				break;
 			} else {
-				console.println(String.format("\nWrong answer! Attempts left: %s", attempts - i));
+				console.printf("\nWrong answer! Attempts left: %s%n", attempts - i);
 			}
 		}
-		console.println(String.format("The number is: %s", number));
+		console.printf("The number is: %s%n", number);
 	}
 }
