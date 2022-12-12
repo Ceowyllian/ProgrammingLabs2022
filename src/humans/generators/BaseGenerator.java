@@ -1,8 +1,11 @@
 package humans.generators;
 
+import humans.generators.random.Random;
+
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
-import humans.random.Random;
 
 abstract class BaseGenerator<C> {
 
@@ -10,6 +13,15 @@ abstract class BaseGenerator<C> {
 
     public abstract C create();
 
-    public abstract List<C> create(int amount);
+    public List<C> create(int amount) {
+        LinkedList<C> list = new LinkedList<C>();
+        for (int i = 0; i < amount; i++) {list.add(create());}
+        return list;
+    }
 
+    protected List<String> getDefault(List<String> provided, String[] defaultValues) {
+        return provided == null || provided.size() == 0 ?
+               Arrays.asList(defaultValues) :
+               provided;
+    }
 }
