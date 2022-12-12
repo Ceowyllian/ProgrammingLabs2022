@@ -2,7 +2,9 @@ package humans.generators.random;
 
 import java.util.List;
 
+
 public class Random {
+
     public double getDouble(double min, double max) {
         return (Math.random() * (max - min)) + min;
     }
@@ -22,5 +24,4 @@ public class Random {
     public <T> T choose(List<T> values) {
         return values.get(getInt(0, values.size() - 1));
     }
-
 }
