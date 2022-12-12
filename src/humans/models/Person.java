@@ -1,25 +1,34 @@
 package humans.models;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import java.util.Objects;
 import java.util.UUID;
 
+
+@JsonAutoDetect
 public class Person {
 
-    private final UUID id;
-
+    public final UUID id = UUID.randomUUID();
     private String name;
     private String surname;
+    private String nation;
     private int age;
     private double height;
     private double weight;
     private boolean habits;
-    private String nation;
-    private Address adress;
+    private Address address;
 
-    public Person(String name, String surname, int age, double height,
-                  double weight, boolean habits, String nation, Address adress) {
-        super();
-        this.id = UUID.randomUUID();
+    public Person(
+        String name,
+        String surname,
+        String nation,
+        int age,
+        double height,
+        double weight,
+        boolean habits,
+        Address address
+    ) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -27,17 +36,13 @@ public class Person {
         this.weight = weight;
         this.habits = habits;
         this.nation = nation;
-        this.adress = adress;
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return name + " " + surname + ", " + age + " y. o.\n" + " Adress: "
-                + adress.toString();
-    }
-
-    public UUID Id() {
-        return id;
+        return name + " " + surname + ", " + age + " y. o.\n" + " Adress: " +
+            address.toString();
     }
 
     public String getName() {
@@ -96,12 +101,12 @@ public class Person {
         this.nation = nation;
     }
 
-    public Address getAdress() {
-        return adress;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdress(Address adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
@@ -110,15 +115,9 @@ public class Person {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Person other = (Person) obj;
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person other = (Person) o;
         return Objects.equals(id, other.id);
     }
-
 }
